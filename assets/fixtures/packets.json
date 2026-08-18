@@ -4,7 +4,7 @@
     {
       "packet_id": "PKT-1001-BLOCKED",
       "title": "Northstar Electrical — August Closeout",
-      "scenario": "An expired insurance certificate and an under-approved invoice must block release.",
+      "scenario": "Expired insurance and a $1,000 approval shortfall stop this payment.",
       "evaluation_date": "2026-08-17",
       "previously_paid_invoice_numbers": ["NS-1041"],
       "documents": [
@@ -66,7 +66,7 @@
     {
       "packet_id": "PKT-1002-REVIEW",
       "title": "Atlas Fire Protection — Review Queue",
-      "scenario": "The documents agree, but a low-confidence amount requires a named human review.",
+      "scenario": "The documents agree, but one amount needs a person to check it.",
       "evaluation_date": "2026-08-17",
       "previously_paid_invoice_numbers": ["AF-8830"],
       "documents": [
@@ -128,7 +128,7 @@
     {
       "packet_id": "PKT-1003-READY",
       "title": "Lakeview Mechanical — Ready Packet",
-      "scenario": "All evidence agrees; a human must still approve before any signature request is prepared.",
+      "scenario": "Everything matches. A person must still approve before a signature request can be prepared.",
       "evaluation_date": "2026-08-17",
       "previously_paid_invoice_numbers": ["LM-2201"],
       "documents": [
@@ -189,4 +189,3 @@
     }
   ]
 }
-

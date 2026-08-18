@@ -44,11 +44,11 @@ async function selectPacket(packetId) {
   $("packet-title").textContent = state.detail.title;
   $("packet-scenario").textContent = state.detail.scenario;
   $("mode-badge").className = "mode";
-  $("mode-badge").querySelector("b").textContent = "Safe fixture mode";
+  $("mode-badge").querySelector("b").textContent = "Sample packet";
   $("live-proof-button").classList.remove("active");
   $("source-banner").hidden = true;
   $("evaluate-button").disabled = false;
-  $("evaluate-button").textContent = "Run evidence check";
+  $("evaluate-button").textContent = "Check this packet";
   $("reviewer").disabled = false;
   $("reason").disabled = false;
   $("signature-button").disabled = true;
@@ -66,26 +66,26 @@ function loadLiveProof() {
   state.detail = {
     packet_id: proof.packet_id,
     title: "Northstar closeout packet",
-    scenario: "Synthetic documents · genuine Nutrient API extraction · saved read-only proof",
+    scenario: "Synthetic documents · verified Nutrient API extraction · saved result",
     documents: proof.documents,
   };
   state.decision = proof.decision;
   renderPackets();
   $("live-proof-button").classList.add("active");
   $("mode-badge").className = "mode live";
-  $("mode-badge").querySelector("b").textContent = "Genuine Nutrient proof";
+  $("mode-badge").querySelector("b").textContent = "Verified Nutrient run";
   $("source-banner").hidden = false;
   $("proof-recorded-at").textContent = new Date(proof.recorded_at).toLocaleString();
   $("packet-id").textContent = proof.packet_id;
   $("packet-title").textContent = state.detail.title;
   $("packet-scenario").textContent = state.detail.scenario;
-  $("evaluate-button").textContent = "Verified live run";
+  $("evaluate-button").textContent = "Verified API result";
   $("evaluate-button").disabled = true;
   $("reviewer").disabled = true;
   $("reason").disabled = true;
   $("signature-button").disabled = true;
   $("signature-result").hidden = false;
-  $("signature-result").innerHTML = "<strong>Read-only proof replay.</strong><br>No API call, email, payment, or signature action can be triggered from this saved result.";
+  $("signature-result").innerHTML = "<strong>Saved result — view only.</strong><br>Nothing on this screen can call the API, email anyone, move money, or request a signature.";
   renderEvidence();
   renderDecision();
   renderAudit();
@@ -95,14 +95,14 @@ function resetDecision() {
   const card = $("status-card");
   card.className = "status-card waiting";
   $("status-pill").textContent = "Waiting";
-  $("status-title").textContent = "No decision yet";
-  $("status-copy").textContent = "The signature boundary remains closed until the packet is evaluated.";
+  $("status-title").textContent = "Nothing checked yet";
+  $("status-copy").textContent = "This packet has not been approved or sent.";
   $("documents-count").textContent = state.detail?.documents.length ?? "—";
   $("fields-count").textContent = "—";
   $("findings-count").textContent = "—";
   $("policy-version").textContent = "";
   $("findings").className = "findings empty-state";
-  $("findings").textContent = "Run the evidence check to inspect blockers, review items, and their source locations.";
+  $("findings").textContent = "Run the check to see any problems and the document values behind them.";
 }
 
 function renderEvidence() {
@@ -136,9 +136,9 @@ async function evaluate() {
 function renderDecision() {
   const decision = state.decision;
   const copy = {
-    blocked: ["Release blocked", "Hard conflicts must be corrected in the source documents."],
-    review_required: ["Human review required", "The packet agrees, but uncertain evidence cannot pass unattended."],
-    ready_for_approval: ["Ready for human approval", "All automated checks passed. No signature is sent without a named approver."],
+    blocked: ["Payment blocked", "Fix these problems in the original documents before continuing."],
+    review_required: ["Needs a person", "The documents agree, but one or more values need to be checked."],
+    ready_for_approval: ["Checks passed", "A named person must still approve before anything can be sent."],
   }[decision.status];
   $("status-card").className = `status-card ${decision.status}`;
   $("status-pill").textContent = decision.status.replaceAll("_", " ");
@@ -156,7 +156,7 @@ function renderFindings() {
   const container = $("findings");
   if (!state.decision.findings.length) {
     container.className = "findings empty-state";
-    container.innerHTML = "✓ No evidence conflicts or unresolved confidence exceptions.";
+    container.innerHTML = "✓ No document conflicts or low-confidence values found.";
     return;
   }
   container.className = "findings";
@@ -165,7 +165,7 @@ function renderFindings() {
       `<span class="evidence-chip">${escapeHtml(item.filename)} · ${escapeHtml(item.field)} · p${escapeHtml(item.page)}</span>`
     ).join("");
     const review = state.mode === "fixture" && finding.severity === "review" && finding.evidence.length
-      ? `<button class="review-button" data-review-doc="${escapeHtml(finding.evidence[0].document_id)}" data-review-field="${escapeHtml(finding.evidence[0].field)}">Confirm after source review</button>`
+      ? `<button class="review-button" data-review-doc="${escapeHtml(finding.evidence[0].document_id)}" data-review-field="${escapeHtml(finding.evidence[0].field)}">I checked this value</button>`
       : "";
     return `<article class="finding ${escapeHtml(finding.severity)}">
       <div class="finding-top">
@@ -197,7 +197,7 @@ async function confirmField(documentId, field) {
     renderEvidence();
     renderDecision();
     await renderAudit();
-    toast("Human review recorded; the policy was replayed.");
+    toast("Review saved. ReleaseGate checked the packet again.");
   } catch (error) { toast(error.message, true); }
 }
 
@@ -209,19 +209,19 @@ async function requestSignature() {
     });
     const envelope = result.envelope;
     $("signature-result").hidden = false;
-    $("signature-result").innerHTML = `<strong>Safe signature preparation recorded.</strong><br>
+    $("signature-result").innerHTML = `<strong>Signature step prepared but not sent.</strong><br>
       Envelope <code>${escapeHtml(envelope.envelope_id)}</code> · ${escapeHtml(envelope.status)}<br>
       ${escapeHtml(envelope.notice)}`;
     await renderAudit();
-    toast("Approval recorded. Fixture envelope prepared without sending anything.");
+    toast("Approval saved. Nothing was sent.");
   } catch (error) { toast(error.message, true); }
 }
 
 async function renderAudit() {
   if (!state.selected) return;
   if (state.mode === "live") {
-    $("audit-eyebrow").textContent = "VENDOR VERIFICATION";
-    $("audit-title").textContent = "Nutrient request receipts";
+    $("audit-eyebrow").textContent = "NUTRIENT API REQUESTS";
+    $("audit-title").textContent = "Five verified API calls";
     $("audit-events").className = "audit-events";
     $("audit-events").innerHTML = state.liveProof.documents.map((document, index) => `<div class="audit-event vendor-event">
       <span class="audit-sequence">${index + 1}</span>
@@ -233,13 +233,13 @@ async function renderAudit() {
     $("chain-status").className = "chain-status valid";
     return;
   }
-  $("audit-eyebrow").textContent = "REPLAYABLE HISTORY";
+  $("audit-eyebrow").textContent = "ACTIVITY HISTORY";
   $("audit-title").textContent = "Audit trail";
   const result = await api(`/api/packets/${encodeURIComponent(state.selected)}/audit`);
   const container = $("audit-events");
   if (!result.events.length) {
     container.className = "audit-events empty-state";
-    container.textContent = "Evaluate a packet to begin the hash-linked record.";
+    container.textContent = "Check a packet to begin its protected activity record.";
   } else {
     container.className = "audit-events";
     container.innerHTML = result.events.map((event) => `<div class="audit-event">
@@ -261,10 +261,10 @@ async function init() {
     if (liveProof.available) {
       const summary = liveProof.summary;
       $("live-proof-button").disabled = false;
-      $("live-proof-meta").textContent = `${summary.successful_requests} API requests · ${summary.fields} cited fields · ${escapeHtml(liveProof.mode)} mode`;
+      $("live-proof-meta").textContent = `${summary.successful_requests} API calls · ${summary.fields} values found · saved result`;
       loadLiveProof();
     } else {
-      $("live-proof-meta").textContent = "No reviewed live proof found; fixtures remain available.";
+      $("live-proof-meta").textContent = "Verified API run unavailable. Sample packets are ready.";
       if (state.packets.length) await selectPacket(state.packets[0].packet_id);
     }
   } catch (error) { toast(error.message, true); }
