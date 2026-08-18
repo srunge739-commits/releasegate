@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="ReleaseGate auditable closeout-packet demonstration" />
+    <title>ReleaseGate — Evidence before signature</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">RG</div>
+        <div>
+          <div class="brand-name">ReleaseGate</div>
+          <div class="brand-subtitle">Evidence before signature</div>
+        </div>
+      </div>
+      <div id="mode-badge" class="mode"><span></span><b>Safe fixture mode</b></div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <p class="eyebrow">CONSTRUCTION PAYMENT CONTROLS</p>
+          <h1>Stop unsupported payments <em>before</em> a lien waiver is signed.</h1>
+          <p class="hero-copy">
+            ReleaseGate cross-checks every closeout document, cites the source of each decision,
+            and keeps the final release behind a named human approval.
+          </p>
+        </div>
+        <div class="hero-proof">
+          <span>5 document types</span>
+          <span>Field-level evidence</span>
+          <span>Tamper-evident audit</span>
+        </div>
+      </section>
+
+      <section class="workspace">
+        <aside class="scenario-panel panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">EVIDENCE SOURCES</p>
+              <h2>Choose a proof</h2>
+            </div>
+          </div>
+          <button id="live-proof-button" class="live-proof-button" disabled>
+            <span class="live-kicker"><i></i> GENUINE NUTRIENT RUN</span>
+            <strong>Load verified API proof</strong>
+            <small id="live-proof-meta">Checking local proof…</small>
+          </button>
+          <p class="fixture-label">DETERMINISTIC FIXTURE FALLBACKS</p>
+          <div id="packet-list" class="packet-list" aria-live="polite"></div>
+          <div class="safe-note">
+            <strong>Safe by construction</strong>
+            <p>This demo cannot email a signer or move money. The live gateway remains disabled.</p>
+          </div>
+        </aside>
+
+        <div class="main-panel">
+          <section class="panel decision-panel">
+            <div id="source-banner" class="source-banner" hidden>
+              <div>
+                <strong>Genuine Nutrient Data Extraction API result</strong>
+                <span>Five synthetic PDFs were processed by the live vendor API; this screen safely replays the saved, sanitized response.</span>
+              </div>
+              <code id="proof-recorded-at"></code>
+            </div>
+            <div class="decision-topline">
+              <div>
+                <p id="packet-id" class="eyebrow">SELECT A PACKET</p>
+                <h2 id="packet-title">Closeout decision</h2>
+                <p id="packet-scenario" class="muted">Run the evidence check to see a traceable decision.</p>
+              </div>
+              <button id="evaluate-button" class="primary" disabled>Run evidence check</button>
+            </div>
+
+            <div id="status-card" class="status-card waiting">
+              <div>
+                <span id="status-pill" class="status-pill">Waiting</span>
+                <h3 id="status-title">No decision yet</h3>
+                <p id="status-copy">The signature boundary remains closed until the packet is evaluated.</p>
+              </div>
+              <div class="metrics">
+                <div><strong id="documents-count">—</strong><span>documents</span></div>
+                <div><strong id="fields-count">—</strong><span>fields checked</span></div>
+                <div><strong id="findings-count">—</strong><span>exceptions</span></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-heading inline">
+              <div>
+                <p class="eyebrow">EXPLAINABLE DECISION</p>
+                <h2>Findings and evidence</h2>
+              </div>
+              <span id="policy-version" class="policy-version"></span>
+            </div>
+            <div id="findings" class="findings empty-state">
+              Run the evidence check to inspect blockers, review items, and their source locations.
+            </div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-heading">
+              <p class="eyebrow">SOURCE-GROUNDED OUTPUT</p>
+              <h2>Extracted evidence</h2>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr><th>Document</th><th>Field</th><th>Observed value</th><th>Confidence</th><th>Page</th><th>Source</th></tr>
+                </thead>
+                <tbody id="evidence-body">
+                  <tr><td colspan="6" class="empty-cell">Choose a packet to inspect its extracted fields.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="panel approval-panel">
+            <div class="panel-heading">
+              <p class="eyebrow">HUMAN RELEASE GATE</p>
+              <h2>Prepare signature request</h2>
+              <p class="muted">A clean policy result is necessary, but never sufficient. A person still approves release.</p>
+            </div>
+            <div class="approval-form">
+              <label>Reviewer name<input id="reviewer" value="Casey Rivera" autocomplete="name" /></label>
+              <label>Approval or review reason<input id="reason" value="Compared the highlighted value with the source document." /></label>
+              <button id="signature-button" class="secondary" disabled>Prepare signature</button>
+            </div>
+            <div id="signature-result" class="signature-result" hidden></div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-heading inline">
+              <div>
+                <p id="audit-eyebrow" class="eyebrow">REPLAYABLE HISTORY</p>
+                <h2 id="audit-title">Audit trail</h2>
+              </div>
+              <span id="chain-status" class="chain-status">No events</span>
+            </div>
+            <div id="audit-events" class="audit-events empty-state">Evaluate a packet to begin the hash-linked record.</div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <footer>Synthetic documents only · Live vendor processing is explicitly labeled · No real payments or signatures</footer>
+    <script src="/app.js" defer></script>
+  </body>
+</html>

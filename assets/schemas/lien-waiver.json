@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "claimant_name": {
+      "type": "string",
+      "description": "The claimant or subcontractor granting the conditional waiver."
+    },
+    "project_id": {
+      "type": "string",
+      "description": "The project identifier covered by the waiver."
+    },
+    "through_date": {
+      "type": "string",
+      "description": "The through date covered by the conditional waiver, preferably formatted YYYY-MM-DD."
+    },
+    "amount": {
+      "type": "number",
+      "description": "The payment amount conditioned by the waiver."
+    }
+  },
+  "required": ["claimant_name", "project_id", "through_date", "amount"]
+}

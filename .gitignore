@@ -1,0 +1,19 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+.env
+*.log
+tmp/
+dist/
+build/
+*.egg-info/
+pytest-cache-files-*/
+
+# Generated demo artifacts are reproducible, but the PDFs are intentionally kept.
+assets/demo-documents/**/*.json
+
+# Genuine vendor results stay local until reviewed and deliberately sanitized.
+artifacts/live/

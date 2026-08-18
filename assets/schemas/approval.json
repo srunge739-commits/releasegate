@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "approved_vendor": {
+      "type": "string",
+      "description": "The vendor whose payment was approved."
+    },
+    "project_id": {
+      "type": "string",
+      "description": "The approved project identifier."
+    },
+    "approved_amount": {
+      "type": "number",
+      "description": "The maximum payment amount approved by the reviewer."
+    },
+    "approver": {
+      "type": "string",
+      "description": "The named person who approved the payment."
+    }
+  },
+  "required": ["approved_vendor", "project_id", "approved_amount", "approver"]
+}

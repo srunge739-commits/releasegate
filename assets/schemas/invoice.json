@@ -1,0 +1,26 @@
+{
+  "type": "object",
+  "properties": {
+    "vendor_name": {
+      "type": "string",
+      "description": "The legal or trading name of the vendor issuing the invoice."
+    },
+    "invoice_number": {
+      "type": "string",
+      "description": "The invoice identifier exactly as printed on the invoice."
+    },
+    "project_id": {
+      "type": "string",
+      "description": "The project, job, or cost-code identifier."
+    },
+    "amount": {
+      "type": "number",
+      "description": "The total amount due for this invoice, excluding prior payments."
+    },
+    "period_end": {
+      "type": "string",
+      "description": "The billing period end date, preferably formatted YYYY-MM-DD."
+    }
+  },
+  "required": ["vendor_name", "invoice_number", "project_id", "amount"]
+}

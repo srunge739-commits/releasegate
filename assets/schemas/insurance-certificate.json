@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "properties": {
+    "insured_name": {
+      "type": "string",
+      "description": "The named insured on the certificate."
+    },
+    "policy_expiration": {
+      "type": "string",
+      "description": "The applicable policy expiration date, preferably formatted YYYY-MM-DD."
+    },
+    "project_id": {
+      "type": "string",
+      "description": "The project identifier stated in the operations or description section."
+    }
+  },
+  "required": ["insured_name", "policy_expiration", "project_id"]
+}

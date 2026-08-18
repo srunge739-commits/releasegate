@@ -1,0 +1,365 @@
+{
+  "result_kind": "live_nutrient_packet_evaluation",
+  "recorded_at": "2026-08-18T17:16:24.460304+00:00",
+  "packet_id": "PKT-1001-BLOCKED",
+  "requested_mode": "structure",
+  "documents": [
+    {
+      "result_kind": "live_nutrient_extraction",
+      "recorded_at": "2026-08-18T17:16:24.460500+00:00",
+      "document": "northstar-invoice-1048.pdf",
+      "schema": "invoice.json",
+      "requested_mode": "structure",
+      "request_id": "GMz1wp9LNu47ZVUAAQbx",
+      "vendor_status": 200,
+      "api_version": "2026-05-25",
+      "metrics": {
+        "pagesProcessed": 1,
+        "processingTimeMs": 2700
+      },
+      "vendor_response_sha256": "df4b26d7bdfb6c5abafcb95575e5dbc03176e0d66e766fb84f403c91c675628d",
+      "fields": {
+        "vendor_name": {
+          "value": "Northstar Electrical LLC",
+          "confidence": 0.95,
+          "page": 1,
+          "bounds": [
+            388.0,
+            449.0,
+            677.0,
+            474.0
+          ]
+        },
+        "invoice_number": {
+          "value": "NS-1048",
+          "confidence": 0.95,
+          "page": 1,
+          "bounds": [
+            411.0,
+            516.0,
+            519.0,
+            541.0
+          ]
+        },
+        "project_id": {
+          "value": "RIVER-042",
+          "confidence": 0.95,
+          "page": 1,
+          "bounds": [
+            333.0,
+            583.0,
+            471.0,
+            608.0
+          ]
+        },
+        "amount": {
+          "value": 12850,
+          "confidence": 0.9696927825876808,
+          "page": 1,
+          "bounds": [
+            311.0,
+            650.0,
+            427.0,
+            675.0
+          ]
+        },
+        "period_end": {
+          "value": "2026-08-15",
+          "confidence": 0.95,
+          "page": 1,
+          "bounds": [
+            352.0,
+            716.0,
+            493.0,
+            741.0
+          ]
+        }
+      }
+    },
+    {
+      "result_kind": "live_nutrient_extraction",
+      "recorded_at": "2026-08-18T17:16:24.460655+00:00",
+      "document": "northstar-w9.pdf",
+      "schema": "w9.json",
+      "requested_mode": "structure",
+      "request_id": "GMz1w24r9yTHLOkAAOwi",
+      "vendor_status": 200,
+      "api_version": "2026-05-25",
+      "metrics": {
+        "pagesProcessed": 1,
+        "processingTimeMs": 2132
+      },
+      "vendor_response_sha256": "df4d8c46c033c57cccb22228c100648cd299fcea8e01ed4bda655af270d3bad9",
+      "fields": {
+        "legal_name": {
+          "value": "Northstar Electrical LLC",
+          "confidence": 0.95,
+          "page": 1,
+          "bounds": [
+            366.0,
+            449.0,
+            655.0,
+            474.0
+          ]
+        },
+        "tax_id_last4": {
+          "value": "7391",
+          "confidence": 0.95,
+          "page": 1,
+          "bounds": [
+            369.0,
+            516.0,
+            424.0,
+            541.0
+          ]
+        }
+      }
+    },
+    {
+      "result_kind": "live_nutrient_extraction",
+      "recorded_at": "2026-08-18T17:16:24.460720+00:00",
+      "document": "northstar-coi-expired.pdf",
+      "schema": "insurance-certificate.json",
+      "requested_mode": "structure",
+      "request_id": "GMz1xCJrpchdAy8AAOgy",
+      "vendor_status": 200,
+      "api_version": "2026-05-25",
+      "metrics": {
+        "pagesProcessed": 1,
+        "processingTimeMs": 2336
+      },
+      "vendor_response_sha256": "a6c619513c3a4bc69b0a13f2ab815808025abdd49e20a87a99747842a3e15667",
+      "fields": {
+        "insured_name": {
+          "value": "Northstar Electrical LLC",
+          "confidence": 0.95,
+          "page": 1,
+          "bounds": [
+            391.0,
+            449.0,
+            680.0,
+            474.0
+          ]
+        },
+        "policy_expiration": {
+          "value": "2026-07-31",
+          "confidence": 0.95,
+          "page": 1,
+          "bounds": [
+            419.0,
+            516.0,
+            557.0,
+            541.0
+          ]
+        },
+        "project_id": {
+          "value": "RIVER-042",
+          "confidence": 0.95,
+          "page": 1,
+          "bounds": [
+            333.0,
+            583.0,
+            471.0,
+            608.0
+          ]
+        }
+      }
+    },
+    {
+      "result_kind": "live_nutrient_extraction",
+      "recorded_at": "2026-08-18T17:16:24.460788+00:00",
+      "document": "northstar-payment-approval.pdf",
+      "schema": "approval.json",
+      "requested_mode": "structure",
+      "request_id": "GMz1xN54lHL2EYEAAOZC",
+      "vendor_status": 200,
+      "api_version": "2026-05-25",
+      "metrics": {
+        "pagesProcessed": 1,
+        "processingTimeMs": 2329
+      },
+      "vendor_response_sha256": "9ded8a9244f78f887e71bd8eb3bf0550f40bb3e2bb023d92647935f14e2ca491",
+      "fields": {
+        "approved_vendor": {
+          "value": "Northstar Electrical LLC",
+          "confidence": 0.95,
+          "page": 1,
+          "bounds": [
+            433.0,
+            449.0,
+            722.0,
+            474.0
+          ]
+        },
+        "project_id": {
+          "value": "RIVER-042",
+          "confidence": 0.95,
+          "page": 1,
+          "bounds": [
+            333.0,
+            516.0,
+            471.0,
+            541.0
+          ]
+        },
+        "approved_amount": {
+          "value": 11850,
+          "confidence": 0.9696927825876808,
+          "page": 1,
+          "bounds": [
+            438.0,
+            583.0,
+            551.0,
+            608.0
+          ]
+        },
+        "approver": {
+          "value": "Jordan Lee",
+          "confidence": 0.95,
+          "page": 1,
+          "bounds": [
+            325.0,
+            650.0,
+            466.0,
+            677.0
+          ]
+        }
+      }
+    },
+    {
+      "result_kind": "live_nutrient_extraction",
+      "recorded_at": "2026-08-18T17:16:24.460849+00:00",
+      "document": "northstar-conditional-waiver.pdf",
+      "schema": "lien-waiver.json",
+      "requested_mode": "structure",
+      "request_id": "GMz1xZs02pKvUYEAAOby",
+      "vendor_status": 200,
+      "api_version": "2026-05-25",
+      "metrics": {
+        "pagesProcessed": 1,
+        "processingTimeMs": 3081
+      },
+      "vendor_response_sha256": "440c8deb502bbec8976a70ba9ebc8deee9a0c6e27ae1507a37f7f0d9a8363a33",
+      "fields": {
+        "claimant_name": {
+          "value": "Northstar Electrical LLC",
+          "confidence": 0.95,
+          "page": 1,
+          "bounds": [
+            408.0,
+            449.0,
+            697.0,
+            474.0
+          ]
+        },
+        "project_id": {
+          "value": "RIVER-042",
+          "confidence": 0.95,
+          "page": 1,
+          "bounds": [
+            333.0,
+            516.0,
+            471.0,
+            541.0
+          ]
+        },
+        "through_date": {
+          "value": "2026-08-15",
+          "confidence": 0.95,
+          "page": 1,
+          "bounds": [
+            386.0,
+            583.0,
+            527.0,
+            608.0
+          ]
+        },
+        "amount": {
+          "value": 12850,
+          "confidence": 0.9696927825876808,
+          "page": 1,
+          "bounds": [
+            311.0,
+            650.0,
+            427.0,
+            675.0
+          ]
+        }
+      }
+    }
+  ],
+  "decision": {
+    "packet_id": "PKT-1001-BLOCKED",
+    "status": "blocked",
+    "blocker_count": 2,
+    "review_count": 0,
+    "checked_documents": 5,
+    "checked_fields": 18,
+    "policy_version": "closeout-policy-2026.08.17",
+    "findings": [
+      {
+        "code": "approval_amount_mismatch",
+        "severity": "blocker",
+        "title": "Approved amount does not cover the invoice",
+        "message": "Invoice amount is $12,850.00; approval is $11,850.00.",
+        "evidence": [
+          {
+            "document_id": "DOC-1001-INV",
+            "document_type": "invoice",
+            "filename": "northstar-invoice-1048.pdf",
+            "field": "amount",
+            "value": 12850,
+            "confidence": 0.9696927825876808,
+            "page": 1,
+            "bounds": [
+              311.0,
+              650.0,
+              427.0,
+              675.0
+            ]
+          },
+          {
+            "document_id": "DOC-1001-APR",
+            "document_type": "approval",
+            "filename": "northstar-payment-approval.pdf",
+            "field": "approved_amount",
+            "value": 11850,
+            "confidence": 0.9696927825876808,
+            "page": 1,
+            "bounds": [
+              438.0,
+              583.0,
+              551.0,
+              608.0
+            ]
+          }
+        ],
+        "remediation": "Obtain a corrected approval or revise the invoice."
+      },
+      {
+        "code": "insurance_expired",
+        "severity": "blocker",
+        "title": "Insurance certificate is expired",
+        "message": "Coverage ended on 2026-07-31; evaluation date is 2026-08-17.",
+        "evidence": [
+          {
+            "document_id": "DOC-1001-COI",
+            "document_type": "insurance_certificate",
+            "filename": "northstar-coi-expired.pdf",
+            "field": "policy_expiration",
+            "value": "2026-07-31",
+            "confidence": 0.95,
+            "page": 1,
+            "bounds": [
+              419.0,
+              516.0,
+              557.0,
+              541.0
+            ]
+          }
+        ],
+        "remediation": "Add a current certificate of insurance."
+      }
+    ]
+  }
+}

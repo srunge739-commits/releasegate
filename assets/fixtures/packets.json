@@ -1,0 +1,192 @@
+{
+  "synthetic": true,
+  "packets": [
+    {
+      "packet_id": "PKT-1001-BLOCKED",
+      "title": "Northstar Electrical — August Closeout",
+      "scenario": "An expired insurance certificate and an under-approved invoice must block release.",
+      "evaluation_date": "2026-08-17",
+      "previously_paid_invoice_numbers": ["NS-1041"],
+      "documents": [
+        {
+          "document_id": "DOC-1001-INV",
+          "document_type": "invoice",
+          "filename": "northstar-invoice-1048.pdf",
+          "fields": {
+            "vendor_name": {"value": "Northstar Electrical LLC", "confidence": 0.99, "page": 1, "bounds": [72, 92, 286, 112]},
+            "invoice_number": {"value": "NS-1048", "confidence": 0.98, "page": 1, "bounds": [390, 92, 482, 112]},
+            "project_id": {"value": "RIVER-042", "confidence": 0.97, "page": 1, "bounds": [72, 145, 178, 165]},
+            "amount": {"value": "12850.00", "confidence": 0.99, "page": 1, "bounds": [394, 566, 492, 588]},
+            "period_end": {"value": "2026-08-15", "confidence": 0.96, "page": 1, "bounds": [72, 171, 176, 191]}
+          }
+        },
+        {
+          "document_id": "DOC-1001-W9",
+          "document_type": "w9",
+          "filename": "northstar-w9.pdf",
+          "fields": {
+            "legal_name": {"value": "Northstar Electrical LLC", "confidence": 0.99, "page": 1, "bounds": [90, 162, 350, 184]},
+            "tax_id_last4": {"value": "7391", "confidence": 0.97, "page": 1, "bounds": [388, 502, 442, 522]}
+          }
+        },
+        {
+          "document_id": "DOC-1001-COI",
+          "document_type": "insurance_certificate",
+          "filename": "northstar-coi-expired.pdf",
+          "fields": {
+            "insured_name": {"value": "Northstar Electrical LLC", "confidence": 0.98, "page": 1, "bounds": [72, 418, 290, 438]},
+            "policy_expiration": {"value": "2026-07-31", "confidence": 0.99, "page": 1, "bounds": [418, 282, 502, 302]},
+            "project_id": {"value": "RIVER-042", "confidence": 0.96, "page": 1, "bounds": [72, 518, 176, 538]}
+          }
+        },
+        {
+          "document_id": "DOC-1001-APR",
+          "document_type": "approval",
+          "filename": "northstar-payment-approval.pdf",
+          "fields": {
+            "approved_vendor": {"value": "Northstar Electrical LLC", "confidence": 0.99, "page": 1, "bounds": [122, 190, 348, 210]},
+            "project_id": {"value": "RIVER-042", "confidence": 0.99, "page": 1, "bounds": [122, 226, 218, 246]},
+            "approved_amount": {"value": "11850.00", "confidence": 0.99, "page": 1, "bounds": [122, 262, 212, 282]},
+            "approver": {"value": "Jordan Lee", "confidence": 0.98, "page": 1, "bounds": [122, 334, 224, 354]}
+          }
+        },
+        {
+          "document_id": "DOC-1001-WVR",
+          "document_type": "lien_waiver",
+          "filename": "northstar-conditional-waiver.pdf",
+          "fields": {
+            "claimant_name": {"value": "Northstar Electrical LLC", "confidence": 0.98, "page": 1, "bounds": [84, 198, 304, 218]},
+            "project_id": {"value": "RIVER-042", "confidence": 0.98, "page": 1, "bounds": [84, 234, 184, 254]},
+            "through_date": {"value": "2026-08-15", "confidence": 0.97, "page": 1, "bounds": [84, 270, 188, 290]},
+            "amount": {"value": "12850.00", "confidence": 0.99, "page": 1, "bounds": [84, 306, 180, 326]}
+          }
+        }
+      ]
+    },
+    {
+      "packet_id": "PKT-1002-REVIEW",
+      "title": "Atlas Fire Protection — Review Queue",
+      "scenario": "The documents agree, but a low-confidence amount requires a named human review.",
+      "evaluation_date": "2026-08-17",
+      "previously_paid_invoice_numbers": ["AF-8830"],
+      "documents": [
+        {
+          "document_id": "DOC-1002-INV",
+          "document_type": "invoice",
+          "filename": "atlas-invoice-8834.pdf",
+          "fields": {
+            "vendor_name": {"value": "Atlas Fire Protection Inc", "confidence": 0.98, "page": 1, "bounds": [72, 92, 286, 112]},
+            "invoice_number": {"value": "AF-8834", "confidence": 0.98, "page": 1, "bounds": [390, 92, 482, 112]},
+            "project_id": {"value": "HARBOR-117", "confidence": 0.97, "page": 1, "bounds": [72, 145, 178, 165]},
+            "amount": {"value": "7420.00", "confidence": 0.68, "page": 1, "bounds": [394, 566, 492, 588]},
+            "period_end": {"value": "2026-08-12", "confidence": 0.95, "page": 1, "bounds": [72, 171, 176, 191]}
+          }
+        },
+        {
+          "document_id": "DOC-1002-W9",
+          "document_type": "w9",
+          "filename": "atlas-w9.pdf",
+          "fields": {
+            "legal_name": {"value": "Atlas Fire Protection Inc.", "confidence": 0.99, "page": 1, "bounds": [90, 162, 350, 184]},
+            "tax_id_last4": {"value": "2084", "confidence": 0.96, "page": 1, "bounds": [388, 502, 442, 522]}
+          }
+        },
+        {
+          "document_id": "DOC-1002-COI",
+          "document_type": "insurance_certificate",
+          "filename": "atlas-coi.pdf",
+          "fields": {
+            "insured_name": {"value": "Atlas Fire Protection", "confidence": 0.98, "page": 1, "bounds": [72, 418, 290, 438]},
+            "policy_expiration": {"value": "2027-03-31", "confidence": 0.99, "page": 1, "bounds": [418, 282, 502, 302]},
+            "project_id": {"value": "HARBOR-117", "confidence": 0.96, "page": 1, "bounds": [72, 518, 176, 538]}
+          }
+        },
+        {
+          "document_id": "DOC-1002-APR",
+          "document_type": "approval",
+          "filename": "atlas-payment-approval.pdf",
+          "fields": {
+            "approved_vendor": {"value": "Atlas Fire Protection Inc", "confidence": 0.99, "page": 1, "bounds": [122, 190, 348, 210]},
+            "project_id": {"value": "HARBOR-117", "confidence": 0.99, "page": 1, "bounds": [122, 226, 218, 246]},
+            "approved_amount": {"value": "7420.00", "confidence": 0.99, "page": 1, "bounds": [122, 262, 212, 282]},
+            "approver": {"value": "Morgan Chen", "confidence": 0.98, "page": 1, "bounds": [122, 334, 224, 354]}
+          }
+        },
+        {
+          "document_id": "DOC-1002-WVR",
+          "document_type": "lien_waiver",
+          "filename": "atlas-conditional-waiver.pdf",
+          "fields": {
+            "claimant_name": {"value": "Atlas Fire Protection Inc", "confidence": 0.98, "page": 1, "bounds": [84, 198, 304, 218]},
+            "project_id": {"value": "HARBOR-117", "confidence": 0.98, "page": 1, "bounds": [84, 234, 184, 254]},
+            "through_date": {"value": "2026-08-12", "confidence": 0.97, "page": 1, "bounds": [84, 270, 188, 290]},
+            "amount": {"value": "7420.00", "confidence": 0.99, "page": 1, "bounds": [84, 306, 180, 326]}
+          }
+        }
+      ]
+    },
+    {
+      "packet_id": "PKT-1003-READY",
+      "title": "Lakeview Mechanical — Ready Packet",
+      "scenario": "All evidence agrees; a human must still approve before any signature request is prepared.",
+      "evaluation_date": "2026-08-17",
+      "previously_paid_invoice_numbers": ["LM-2201"],
+      "documents": [
+        {
+          "document_id": "DOC-1003-INV",
+          "document_type": "invoice",
+          "filename": "lakeview-invoice-2209.pdf",
+          "fields": {
+            "vendor_name": {"value": "Lakeview Mechanical LLC", "confidence": 0.99, "page": 1, "bounds": [72, 92, 286, 112]},
+            "invoice_number": {"value": "LM-2209", "confidence": 0.99, "page": 1, "bounds": [390, 92, 482, 112]},
+            "project_id": {"value": "CEDAR-208", "confidence": 0.99, "page": 1, "bounds": [72, 145, 178, 165]},
+            "amount": {"value": "9635.50", "confidence": 0.99, "page": 1, "bounds": [394, 566, 492, 588]},
+            "period_end": {"value": "2026-08-10", "confidence": 0.98, "page": 1, "bounds": [72, 171, 176, 191]}
+          }
+        },
+        {
+          "document_id": "DOC-1003-W9",
+          "document_type": "w9",
+          "filename": "lakeview-w9.pdf",
+          "fields": {
+            "legal_name": {"value": "Lakeview Mechanical LLC", "confidence": 0.99, "page": 1, "bounds": [90, 162, 350, 184]},
+            "tax_id_last4": {"value": "6142", "confidence": 0.98, "page": 1, "bounds": [388, 502, 442, 522]}
+          }
+        },
+        {
+          "document_id": "DOC-1003-COI",
+          "document_type": "insurance_certificate",
+          "filename": "lakeview-coi.pdf",
+          "fields": {
+            "insured_name": {"value": "Lakeview Mechanical", "confidence": 0.98, "page": 1, "bounds": [72, 418, 290, 438]},
+            "policy_expiration": {"value": "2027-05-30", "confidence": 0.99, "page": 1, "bounds": [418, 282, 502, 302]},
+            "project_id": {"value": "CEDAR-208", "confidence": 0.98, "page": 1, "bounds": [72, 518, 176, 538]}
+          }
+        },
+        {
+          "document_id": "DOC-1003-APR",
+          "document_type": "approval",
+          "filename": "lakeview-payment-approval.pdf",
+          "fields": {
+            "approved_vendor": {"value": "Lakeview Mechanical LLC", "confidence": 0.99, "page": 1, "bounds": [122, 190, 348, 210]},
+            "project_id": {"value": "CEDAR-208", "confidence": 0.99, "page": 1, "bounds": [122, 226, 218, 246]},
+            "approved_amount": {"value": "9635.50", "confidence": 0.99, "page": 1, "bounds": [122, 262, 212, 282]},
+            "approver": {"value": "Riley Brooks", "confidence": 0.99, "page": 1, "bounds": [122, 334, 224, 354]}
+          }
+        },
+        {
+          "document_id": "DOC-1003-WVR",
+          "document_type": "lien_waiver",
+          "filename": "lakeview-conditional-waiver.pdf",
+          "fields": {
+            "claimant_name": {"value": "Lakeview Mechanical LLC", "confidence": 0.99, "page": 1, "bounds": [84, 198, 304, 218]},
+            "project_id": {"value": "CEDAR-208", "confidence": 0.99, "page": 1, "bounds": [84, 234, 184, 254]},
+            "through_date": {"value": "2026-08-10", "confidence": 0.98, "page": 1, "bounds": [84, 270, 188, 290]},
+            "amount": {"value": "9635.50", "confidence": 0.99, "page": 1, "bounds": [84, 306, 180, 326]}
+          }
+        }
+      ]
+    }
+  ]
+}
+

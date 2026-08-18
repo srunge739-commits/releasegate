@@ -1,0 +1,14 @@
+{
+  "type": "object",
+  "properties": {
+    "legal_name": {
+      "type": "string",
+      "description": "The taxpayer legal name shown on line 1."
+    },
+    "tax_id_last4": {
+      "type": "string",
+      "description": "Only the last four displayed digits of the taxpayer identification number. Never return a complete tax identifier."
+    }
+  },
+  "required": ["legal_name", "tax_id_last4"]
+}
