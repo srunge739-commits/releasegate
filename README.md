@@ -45,10 +45,10 @@ python -m pytest -q -p no:cacheprovider
 
 Recommended demo order:
 
-1. Run `PKT-1001-BLOCKED` to show an expired certificate and under-approved invoice stopping release.
-2. Run `PKT-1002-REVIEW`, confirm the highlighted low-confidence amount as a named reviewer, and show the policy replay.
+1. Begin on the reviewed genuine Nutrient proof: five vendor requests, 18 cited fields, and two blockers stop release.
+2. Choose `PKT-1002-REVIEW`, explicitly label it as a deterministic fallback, confirm the highlighted low-confidence amount as a named reviewer, and show the policy replay.
 3. Prepare the fixture signature request and show that it records intent without sending a document or email.
-4. Show the verified audit chain.
+4. Show the verified hash-linked audit chain.
 
 ## Live Nutrient Data Extraction API
 

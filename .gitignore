@@ -17,3 +17,8 @@ assets/demo-documents/**/*.json
 
 # Genuine vendor results stay local until reviewed and deliberately sanitized.
 artifacts/live/
+
+# Private planning notes stay on the builder's machine, not in the judge-facing repository.
+submission/COST_AND_CREDENTIALS.md
+submission/HOSTILE_JUDGE_REVIEW.md
+submission/OVERNIGHT_CHECKLIST.md
